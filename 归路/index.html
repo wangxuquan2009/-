@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 新 Bootstrap5 核心 CSS 文件 -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <title>免费视频观看</title>
+</head>
+<style>
+  body {
+		margin: 20px;
+	}
+  button {
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+  }
+  iframe {
+    width: 100%;
+    height: 500px;
+    display: block;
+  }
+
+  iframe img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+</style>
+<body>
+  <iframe src="images/图片.png"></iframe>
+</body>
+<!--  popper.min.js 用于弹窗、提示、下拉菜单 -->
+<script src="https://cdn.staticfile.org/popper.js/2.9.3/umd/popper.min.js"></script>
+<!-- 最新的 Bootstrap5 核心 JavaScript 文件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+  // Define the video URLs as an object with keys corresponding to the button IDs
+  var videoUrls = {
+    "test1": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_1bbf0eo65vg.html",
+    "test2": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_okgl1q69xw.html",
+    "test3": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_1dzwbd35b0k.html",
+    "test4": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_1zr97i5drz4.html",
+    "test5": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_2au81r6a7w0.html",
+    "test6": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_15iqbue0nu0.html",
+    "test7": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_1rhulbwz2q0.html",
+    "test8": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_10j8l5z0774.html",
+    "test9": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_ykch34kxfk.html",
+    "test10": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_26nm9n7fmjg.html",
+    "test11": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_2dislmrwuiw.html",
+    "test12": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_2au81r6a7w0.html",
+    "test13": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_15iqbue0nu0.html",
+    "test14": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_1rhulbwz2q0.html",
+    "test60": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_1yw7z2z2lw8.html"
+  };
+
+// Generate the buttons dynamically using a for loop
+for (let i = 1; i <= 60; i++) {
+  const $button = $("<button>")
+    .attr("type", "button")
+    .addClass("btn btn-primary")
+    .attr("id", "test" + i)
+    .text("第" + i + "集")
+    .appendTo($("body"));
+
+  // Add a click event handler to each button to load the corresponding video URL
+  $button.click(function() {
+    const id = $(this).attr("id");
+    const videoUrl = videoUrls[id];
+    $("iframe").remove();
+    $("#test1").before($("<iframe>").attr({
+      height: "500",
+      width: "100%",
+      src: videoUrl,
+    }));
+  });
+}
+</script>
+</html>
