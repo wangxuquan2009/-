@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 新 Bootstrap5 核心 CSS 文件 -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <title>免费视频观看</title>
+</head>
+<style>
+  body {
+		margin: 20px;
+	}
+  button {
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+  }
+  iframe {
+    width: 100%;
+    height: 500px;
+    display: block;
+  }
+
+  iframe img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+</style>
+<body>
+  <iframe src="../images/图片.png"></iframe>
+</body>
+<!--  popper.min.js 用于弹窗、提示、下拉菜单 -->
+<script src="https://cdn.staticfile.org/popper.js/2.9.3/umd/popper.min.js"></script>
+<!-- 最新的 Bootstrap5 核心 JavaScript 文件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+  // Define the video URLs as an object with keys corresponding to the button IDs
+  var videoUrls = {
+    "test1": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvovox5w.html",
+    "test2": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvovonxk.html",
+    "test3": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvovpnj8.html",
+    "test4": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvovp7ek.html",
+    "test5": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvovsxe8.html",
+    "test6": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvovu2fk.html",
+    "test7": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvovtpr4.html",
+    "test8": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvovrooo.html",
+    "test9": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvoud3cs.html",
+    "test10": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvoud0o0.html",
+    "test11": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvoucvio.html",
+    "test12": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvoudstk.html",
+    "test13": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvoms75k.html",
+    "test14": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvomrsto.html",
+    "test15": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvomq0l0.html",
+    "test16": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvompm6c.html",
+    "test17": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvomqk5g.html",
+    "test18": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvomu8lk.html",
+    "test19": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvsvy3jk.html",
+    "test20": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvsvyoko.html",
+    "test21": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvsvy97c.html",
+    "test22": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvsvwm9g.html",
+    "test23": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvsvw9gc.html",
+    "test24": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvsvx7ew.html",
+    "test25": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvsvwvrg.html",
+    "test26": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvsw0gp4.html",
+    "test27": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvt3q4uo.html",
+    "test28": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvt3q008.html",
+    "test29": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvt3txtw.html",
+    "test30": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvt3th9s.html",
+    "test31": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvt1ykgk.html",
+    "test32": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvt1xito.html",
+    "test33": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvt217e4.html",
+    "test34": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvt20ulw.html",
+    "test35": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvt0aswg.html",
+    "test36": "https://jx.jsonplayer.com/player/?url=https://www.iqiyi.com/v_19rvt0adk8.html"
+  };
+
+// Generate the buttons dynamically using a for loop
+for (let i = 1; i <= 36; i++) {
+  const $button = $("<button>")
+    .attr("type", "button")
+    .addClass("btn btn-primary")
+    .attr("id", "test" + i)
+    .text("第" + i + "集")
+    .appendTo($("body"));
+
+  // Add a click event handler to each button to load the corresponding video URL
+  $button.click(function() {
+    const id = $(this).attr("id");
+    const videoUrl = videoUrls[id];
+    $("iframe").remove();
+    $("#test1").before($("<iframe>").attr({
+      height: "500",
+      width: "100%",
+      src: videoUrl,
+    }));
+  });
+}
+</script>
+</html>

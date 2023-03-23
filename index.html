@@ -16,14 +16,39 @@
   </head>
   <body>
     <a href="./归路/index.html">
-        <div class="image-title">
-          <img src="images/归路.webp" alt="Image 1">
-          <h2>归路</h2>
-        </div>
-      </a>
-    <div class="image-title">
-      <img src="https://via.placeholder.com/50" alt="Image 2">
-      <h2>Title 2</h2>
-    </div>
+      <div class="image-title">
+        <img src="images/归路.webp" alt="Image 1">
+        <h2>归路</h2>
+      </div>
+    </a>
+    <a href="./两世欢/index.html">
+      <div class="image-title">
+        <img src="images/两世欢.webp" alt="Image 2">
+        <h2>两世欢</h2>
+      </div>
+    </a>
   </body>
+  <script src="node_modules/nexmo-client/dist/nexmoClient.js"></script>
+  <script>
+    function sendVerificationCode(phoneNumber) {
+      const vonage = new Vonage({
+        apiKey: "4149abb2",
+        apiSecret: "YweQMeyNQ1yct6uO",
+      });
+
+      const from = "运营团队";
+      const to = "+8617763930306";
+      const code = Math.floor(Math.random() * 8999 + 1000); // 生成4位随机验证码
+
+      const message = `你是验证码是：${code}`;
+
+      vonage.message.sendSms(from, to, message, (err, responseData) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(responseData);
+        }
+      });
+    }
+  </script>
 </html>
